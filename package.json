@@ -1,11 +1,11 @@
 {
   "name": "react-native-swipe-gesture-handler",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "This package will help you to manage swipe gestures in your react native application.",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
-  "homepage" : "https://github.com/harshalone/react-native-swipe-gesture-handler",
+  "homepage" : "https://github.com/harshalone/react-native-swipe-gesture-hanlder",
   "scripts": {
     "build": "tsup"
   },
@@ -29,6 +29,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/harshalone/react-native-swipe-gesture-handler.git"
+    "url": "https://github.com/harshalone/react-native-swipe-gesture-hanlder.git"
   }
 }
