@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "strict": true,
+        "noImplicitAny": true,
+        "esModuleInterop": true,
+        "strictNullChecks": true,
+        "target": "es5", 
+        "module": "commonjs",
+        "declaration": true,
+        "isolatedModules": true,
+        "noEmit": true,
+        "outDir": "dist",
+        "jsx": "react",
+    },
+    "include": ["src", "tsup.config.ts", "node_modules/@types"],
+    "exclude": ["node_modules"]
+}

@@ -1,0 +1,33 @@
+{
+  "name": "react-native-swipe-gesture-hanlder",
+  "version": "1.0.0",
+  "description": "This package will help you to manage swipe gestures for swipe gestures in your react native application.",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "tsup"
+  },
+  "keywords": [
+    "react-native-swipe-gesture-hanlder",
+    "react-native-gesture-hanlder",
+    "react-native-swipe"
+  ],
+  "author": "Herschelle Lonare - herschelle.lonare@hotmail.com",
+  "license": "MIT",
+  "devDependencies": {
+    "@swc/core": "^1.4.12",
+    "@types/react": "^18.2.74",
+    "@types/react-native": "^0.73.0",
+    "tsup": "^8.0.2",
+    "typescript": "^5.4.4"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0",
+    "react-native": "^0.60.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/react-native-swipe-gesture-hanlder.git"
+  }
+}
