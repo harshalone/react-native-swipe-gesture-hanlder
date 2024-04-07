@@ -1,6 +1,6 @@
 {
   "name": "react-native-swipe-gesture-handler",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "This package will help you to manage swipe gestures in your react native application.",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
