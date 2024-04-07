@@ -1,68 +1,10 @@
 "use strict";
-function _define_property(obj, key, value) {
-    if (key in obj) {
-        Object.defineProperty(obj, key, {
-            value: value,
-            enumerable: true,
-            configurable: true,
-            writable: true
-        });
-    } else {
-        obj[key] = value;
-    }
-    return obj;
-}
-function _object_spread(target) {
-    for(var i = 1; i < arguments.length; i++){
-        var source = arguments[i] != null ? arguments[i] : {};
-        var ownKeys = Object.keys(source);
-        if (typeof Object.getOwnPropertySymbols === "function") {
-            ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function(sym) {
-                return Object.getOwnPropertyDescriptor(source, sym).enumerable;
-            }));
-        }
-        ownKeys.forEach(function(key) {
-            _define_property(target, key, source[key]);
-        });
-    }
-    return target;
-}
-function ownKeys(object, enumerableOnly) {
-    var keys = Object.keys(object);
-    if (Object.getOwnPropertySymbols) {
-        var symbols = Object.getOwnPropertySymbols(object);
-        if (enumerableOnly) {
-            symbols = symbols.filter(function(sym) {
-                return Object.getOwnPropertyDescriptor(object, sym).enumerable;
-            });
-        }
-        keys.push.apply(keys, symbols);
-    }
-    return keys;
-}
-function _object_spread_props(target, source) {
-    source = source != null ? source : {};
-    if (Object.getOwnPropertyDescriptors) {
-        Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
-    } else {
-        ownKeys(Object(source)).forEach(function(key) {
-            Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
-        });
-    }
-    return target;
-}
 var __create = Object.create;
 var __defProp = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
 var __getOwnPropNames = Object.getOwnPropertyNames;
 var __getProtoOf = Object.getPrototypeOf;
 var __hasOwnProp = Object.prototype.hasOwnProperty;
-var __export = function(target, all) {
-    for(var name in all)__defProp(target, name, {
-        get: all[name],
-        enumerable: true
-    });
-};
 var __copyProps = function(to, from, except, desc) {
     if (from && typeof from === "object" || typeof from === "function") {
         var _iteratorNormalCompletion = true, _didIteratorError = false, _iteratorError = undefined;
@@ -111,45 +53,8 @@ var __toCommonJS = function(mod) {
 };
 // src/index.ts
 var src_exports = {};
-__export(src_exports, {
-    SwipeGesture: function() {
-        return SwipeGesture_default;
-    }
-});
 module.exports = __toCommonJS(src_exports);
 // src/SwipeGesture.tsx
 var import_react = __toESM(require("react"));
 var import_react_native = require("react-native");
-var SwipeGesture = function(props) {
-    var panResponder = (0, import_react.useRef)(import_react_native.PanResponder.create({
-        onStartShouldSetPanResponder: function(evt, gestureState) {
-            return true;
-        },
-        onPanResponderRelease: function(evt, gestureState) {
-            var x = gestureState.dx;
-            var y = gestureState.dy;
-            if (Math.abs(x) > Math.abs(y)) {
-                if (x >= 0) {
-                    props.onSwipePerformed("right");
-                } else {
-                    props.onSwipePerformed("left");
-                }
-            } else {
-                if (y >= 0) {
-                    props.onSwipePerformed("down");
-                } else {
-                    props.onSwipePerformed("up");
-                }
-            }
-        }
-    })).current;
-    return /* @__PURE__ */ import_react.default.createElement(import_react_native.Animated.View, _object_spread_props(_object_spread({}, panResponder.panHandlers), {
-        style: props.gestureStyle
-    }), props.children);
-};
-var SwipeGesture_default = SwipeGesture;
-// Annotate the CommonJS export names for ESM import in node:
-0 && (module.exports = {
-    SwipeGesture: SwipeGesture
-});
 //# sourceMappingURL=index.js.map
