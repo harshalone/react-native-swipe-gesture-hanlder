@@ -1,17 +1,17 @@
-import React, { useRef } from 'react';
-import { View, Animated, PanResponder, ViewStyle } from 'react-native'; 
+import React, { useEffect, useRef } from 'react';
+import { View, Animated, PanResponder, GestureResponderEvent, PanResponderGestureState } from 'react-native';
 
 interface SwipeGestureProps {
-  gestureStyle?: ViewStyle;
-  onSwipePerformed: (direction: 'up' | 'down' | 'left' | 'right') => void;
+  gestureStyle?: any;  
+  children?: React.ReactNode;
+  onSwipePerformed: (direction: string) => void;
 }
 
-const SwipeGesture: React.FC<SwipeGestureProps> = (props) => {
-
+const SwipeGesture = (props: SwipeGestureProps) => {
   const panResponder = useRef(
     PanResponder.create({
-      onStartShouldSetPanResponder: () => true,
-      onPanResponderRelease: (_: any, gestureState: any) => {
+      onStartShouldSetPanResponder: (evt: GestureResponderEvent, gestureState: PanResponderGestureState) => true,
+      onPanResponderRelease: (evt: GestureResponderEvent, gestureState: PanResponderGestureState) => {
         const x = gestureState.dx;
         const y = gestureState.dy;
         if (Math.abs(x) > Math.abs(y)) {
@@ -33,7 +33,7 @@ const SwipeGesture: React.FC<SwipeGestureProps> = (props) => {
 
   return (
     <Animated.View {...panResponder.panHandlers} style={props.gestureStyle}>
-      <View>{props.children}</View>
+      {props.children} 
     </Animated.View>
   );
 };

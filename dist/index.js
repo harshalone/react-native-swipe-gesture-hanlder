@@ -122,10 +122,10 @@ var import_react = __toESM(require("react"));
 var import_react_native = require("react-native");
 var SwipeGesture = function(props) {
     var panResponder = (0, import_react.useRef)(import_react_native.PanResponder.create({
-        onStartShouldSetPanResponder: function() {
+        onStartShouldSetPanResponder: function(evt, gestureState) {
             return true;
         },
-        onPanResponderRelease: function(_, gestureState) {
+        onPanResponderRelease: function(evt, gestureState) {
             var x = gestureState.dx;
             var y = gestureState.dy;
             if (Math.abs(x) > Math.abs(y)) {
@@ -145,7 +145,7 @@ var SwipeGesture = function(props) {
     })).current;
     return /* @__PURE__ */ import_react.default.createElement(import_react_native.Animated.View, _object_spread_props(_object_spread({}, panResponder.panHandlers), {
         style: props.gestureStyle
-    }), /* @__PURE__ */ import_react.default.createElement(import_react_native.View, null, props.children));
+    }), props.children);
 };
 var SwipeGesture_default = SwipeGesture;
 // Annotate the CommonJS export names for ESM import in node:

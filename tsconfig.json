@@ -11,6 +11,7 @@
         "noEmit": true,
         "outDir": "dist",
         "jsx": "react",
+        "baseUrl": "."
     },
     "include": ["src", "tsup.config.ts", "node_modules/@types"],
     "exclude": ["node_modules"]

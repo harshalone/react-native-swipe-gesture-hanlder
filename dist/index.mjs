@@ -52,13 +52,13 @@ function _object_spread_props(target, source) {
     return target;
 }
 import React, { useRef } from "react";
-import { View, Animated, PanResponder } from "react-native";
+import { Animated, PanResponder } from "react-native";
 var SwipeGesture = function(props) {
     var panResponder = useRef(PanResponder.create({
-        onStartShouldSetPanResponder: function() {
+        onStartShouldSetPanResponder: function(evt, gestureState) {
             return true;
         },
-        onPanResponderRelease: function(_, gestureState) {
+        onPanResponderRelease: function(evt, gestureState) {
             var x = gestureState.dx;
             var y = gestureState.dy;
             if (Math.abs(x) > Math.abs(y)) {
@@ -78,7 +78,7 @@ var SwipeGesture = function(props) {
     })).current;
     return /* @__PURE__ */ React.createElement(Animated.View, _object_spread_props(_object_spread({}, panResponder.panHandlers), {
         style: props.gestureStyle
-    }), /* @__PURE__ */ React.createElement(View, null, props.children));
+    }), props.children);
 };
 var SwipeGesture_default = SwipeGesture;
 export { SwipeGesture_default as SwipeGesture };
